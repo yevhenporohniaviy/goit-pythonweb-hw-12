@@ -3,6 +3,13 @@ from sqlalchemy.orm import relationship
 from app.db.base_class import Base
 
 class Contact(Base):
+    """
+    Contact model representing a contact in the database.
+    
+    This model defines the structure of contact records, including
+    personal information and relationship to users.
+    """
+    
     __tablename__ = "contacts"
 
     id = Column(Integer, primary_key=True, index=True)

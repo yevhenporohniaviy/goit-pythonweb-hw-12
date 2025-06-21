@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  docs:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sphinx-build -b html docs/source docs/build/html
+    environment:
+      - PYTHONPATH=/app

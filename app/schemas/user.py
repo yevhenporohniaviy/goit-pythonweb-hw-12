@@ -19,9 +19,24 @@ class UserResponse(UserBase):
     id: int
     is_active: bool
     is_verified: bool
+    role: str
 
     class Config:
         from_attributes = True
+
+
+class UserUpdate(BaseModel):
+    email: Optional[EmailStr] = None
+    is_active: Optional[bool] = None
+    is_verified: Optional[bool] = None
+    role: Optional[str] = None
+
+
+class UserAdminUpdate(BaseModel):
+    email: Optional[EmailStr] = None
+    is_active: Optional[bool] = None
+    is_verified: Optional[bool] = None
+    role: Optional[str] = None
 
 
 class Token(BaseModel):
